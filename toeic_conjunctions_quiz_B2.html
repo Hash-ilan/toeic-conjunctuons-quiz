@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEIC Parts 5 & 6 — Conjunctions Quiz (B2)</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f0f2f5;--surface:#ffffff;--border:#dde1e8;--text:#141820;--muted:#6b7280;--accent:#1e4d8c;--accent-light:#e8eef8;--accent-dark:#122f57;--danger:#b91c1c;--danger-light:#fef2f2;--radius:10px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:2rem 1rem 4rem}
+.container{max-width:680px;margin:0 auto}
+header{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+header h1{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;line-height:1.2;margin-bottom:6px}
+header p{font-size:14px;color:var(--muted)}
+.level-badge{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:500;letter-spacing:.06em;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.mode-tabs{display:flex;gap:8px;margin-bottom:1.5rem}
+.tab{border:1px solid var(--border);background:transparent;border-radius:20px;padding:6px 16px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--muted);cursor:pointer;transition:all .15s}
+.tab.active{background:var(--text);color:#fff;border-color:var(--text)}
+.stats-bar{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:13px;color:var(--muted)}
+.stat strong{color:var(--text)}
+.progress-wrap{height:3px;background:#dde1e8;border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s ease}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.q-meta{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.part6-context{background:#f0f4fb;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13px;color:#1e3a5f;line-height:1.7;margin-bottom:14px;white-space:pre-line}
+.q-text{font-size:16px;line-height:1.7;color:var(--text);margin-bottom:1.25rem}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:480px){.options{grid-template-columns:1fr}}
+.opt{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);cursor:pointer;text-align:left;transition:border-color .15s,background .15s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--accent);background:var(--accent-light)}
+.opt.correct{border-color:var(--accent);background:var(--accent-light);color:var(--accent-dark);font-weight:500}
+.opt.wrong{border-color:var(--danger);background:var(--danger-light);color:var(--danger)}
+.opt:disabled{cursor:default}
+.feedback{margin-top:14px;padding:10px 14px;border-radius:8px;font-size:13px;line-height:1.6;display:none}
+.feedback.show{display:block}
+.feedback.correct-fb{background:var(--accent-light);color:var(--accent-dark);border-left:3px solid var(--accent)}
+.feedback.wrong-fb{background:var(--danger-light);color:var(--danger);border-left:3px solid var(--danger)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:9px 20px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--bg)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-dark)}
+.results{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem 1.5rem;text-align:center}
+.score-ring{width:110px;height:110px;border-radius:50%;border:3px solid var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.score-ring .num{font-family:'DM Serif Display',serif;font-size:28px;color:var(--accent-dark);line-height:1}
+.score-ring .lbl{font-size:11px;color:var(--muted);margin-top:2px}
+.results h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:8px}
+.results p{font-size:14px;color:var(--muted);margin-bottom:1.5rem}
+.breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.5rem}
+.bd-card{background:var(--bg);border-radius:8px;padding:12px}
+.bd-card .val{font-size:20px;font-weight:500;color:var(--text)}
+.bd-card .key{font-size:12px;color:var(--muted);margin-top:2px}
+footer{display:block;text-align:center;font-size:12px;color:var(--muted);margin-top:2rem}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="level-badge">B2 — Upper Intermediate</div>
+    <h1>TOEIC Parts 5 &amp; 6<br>Conjunctions Quiz</h1>
+    <p>B2 level &nbsp;·&nbsp; 50 questions &nbsp;·&nbsp; Linking words &amp; connectors</p>
+  </header>
+  <div class="mode-tabs">
+    <button class="tab active" onclick="setMode('practice')">Practice mode</button>
+    <button class="tab" onclick="setMode('test')">Test mode</button>
+  </div>
+  <div class="stats-bar">
+    <div class="stat">Question <strong id="q-counter">1 / 50</strong></div>
+    <div class="stat">Score <strong id="score-disp">0 / 0</strong></div>
+    <div class="stat">Part <strong id="part-disp">5</strong></div>
+  </div>
+  <div class="progress-wrap"><div class="progress-fill" id="prog" style="width:2%"></div></div>
+  <div id="quiz-area"></div>
+  <div id="results-area" style="display:none"></div>
+  <div class="nav" id="nav-bar">
+    <button class="btn" id="prev-btn" onclick="prevQ()">← Previous</button>
+    <button class="btn primary" id="next-btn" onclick="nextQ()">Next →</button>
+    <button class="btn primary" id="submit-btn" style="display:none" onclick="submitQuiz()">Submit quiz</button>
+  </div>
+</div>
+<footer>Created for TOEIC exam preparation &nbsp;·&nbsp; B2 level</footer>
+
+<script>
+const raw=[
+  // ── PART 5 (Q1–30) ──────────────────────────────────────────────────────
+  {part:5,q:"The board approved the merger _____ shareholder confidence had been severely undermined by recent audits.",correct:"even though",d:["due to","so that","consequently"],exp:'"Even though" introduces a strong concession — the merger was approved despite the negative audit findings.'},
+  {part:5,q:"The restructuring plan was implemented swiftly; _____, its long-term impact remains uncertain.",correct:"nevertheless",d:["furthermore","as a result","whereas"],exp:'"Nevertheless" acknowledges the swift implementation while signalling that uncertainty persists — a sophisticated contrast connector.'},
+  {part:5,q:"The acquisition was completed ahead of schedule _____ considerable logistical challenges.",correct:"in spite of",d:["because of","so that","while"],exp:'"In spite of" + noun phrase concedes the obstacles without attributing them as a cause.'},
+  {part:5,q:"_____ the revised guidelines stipulate, all overseas transactions must be cleared by compliance.",correct:"According to",d:["In spite of","Whereas","Even if"],exp:'"According to" references an authoritative source — essential in formal TOEIC Part 5 contexts.'},
+  {part:5,q:"The committee deferred the vote _____ allow more time for due diligence.",correct:"so as to",d:["so that","despite","whereas"],exp:'"So as to" expresses deliberate purpose and is followed by a base verb — more formal than "in order to" in written English.'},
+  {part:5,q:"Revenue from the Asia-Pacific division surged _____ domestic sales contracted for the third consecutive quarter.",correct:"whereas",d:["nevertheless","due to","in addition"],exp:'"Whereas" draws a direct and precise contrast between two simultaneous but opposing trends.'},
+  {part:5,q:"The pilot programme yielded promising results; _____, senior management has approved a full rollout.",correct:"consequently",d:["however","despite","whereas"],exp:'"Consequently" signals that the approval is a direct logical outcome of the promising results.'},
+  {part:5,q:"The new compliance framework is both comprehensive _____ enforceable, which was the committee\'s primary objective.",correct:"and",d:["but","despite","whereas"],exp:'"And" links two parallel adjectives as a coordinating conjunction — precision matters at B2 when simpler words are distractors.'},
+  {part:5,q:"_____ the contract stipulates a fixed delivery date, the supplier has repeatedly failed to meet it.",correct:"Although",d:["Because","Therefore","As a result"],exp:'"Although" introduces a clause that contrasts a formal obligation with actual behaviour.'},
+  {part:5,q:"The firm expanded its operations into three new markets _____ facing mounting pressure from regulators.",correct:"despite",d:["because","so that","therefore"],exp:'"Despite" + gerund (facing) is a high-frequency B2 structure in business English.'},
+  {part:5,q:"Employees are encouraged to raise concerns directly with HR _____ they feel uncomfortable speaking to their line manager.",correct:"in the event that",d:["in spite of","so as to","whereas"],exp:'"In the event that" is a formal conditional connector — more precise than "if" in policy documents.'},
+  {part:5,q:"The product recall was handled discreetly _____ avoid unnecessary damage to the brand.",correct:"so as to",d:["so that","despite","although"],exp:'"So as to" + base verb expresses purposeful action — common in corporate communications at B2.'},
+  {part:5,q:"The quarterly targets were exceeded; _____, the bonus pool will be significantly larger than forecast.",correct:"as a result",d:["however","in spite of","whereas"],exp:'"As a result" introduces a direct consequence — the bonus increase follows logically from exceeding targets.'},
+  {part:5,q:"The CFO resigned _____ mounting pressure from institutional investors over the company\'s debt exposure.",correct:"due to",d:["although","so that","nevertheless"],exp:'"Due to" + noun phrase gives a formal cause — preferred over "because of" in written business English at B2.'},
+  {part:5,q:"The internal audit revealed no irregularities; _____, the external review raised several concerns.",correct:"however",d:["therefore","furthermore","consequently"],exp:'"However" pivots from a positive finding to a contrasting negative one — a classic TOEIC Part 5 structure.'},
+  {part:5,q:"The delegation was authorised to negotiate the terms _____ they could not finalise the agreement without board approval.",correct:"although",d:["so that","in spite of","due to"],exp:'"Although" acknowledges the authority granted while immediately limiting it — a nuanced B2 contrast.'},
+  {part:5,q:"Staff retention has improved markedly _____ the introduction of the new benefits package.",correct:"since",d:["despite","whereas","nevertheless"],exp:'"Since" here expresses cause (because of / following) — a more sophisticated choice than "because of" in formal reports.'},
+  {part:5,q:"The proposed solution is technically sound; _____, its implementation would require substantial upfront investment.",correct:"nevertheless",d:["therefore","since","additionally"],exp:'"Nevertheless" concedes the technical soundness while highlighting the financial obstacle.'},
+  {part:5,q:"The legal team advised against the acquisition _____ the reputational risks far outweighed the projected gains.",correct:"on the grounds that",d:["in spite of","so as to","whereas"],exp:'"On the grounds that" is a formal causal connector used in legal and professional contexts — a B2 hallmark phrase.'},
+  {part:5,q:"The strategic review will assess operational efficiency _____ identify areas for cost reduction.",correct:"as well as",d:["despite","whereas","however"],exp:'"As well as" combines two parallel verb phrases elegantly — more sophisticated than "and also" at B2.'},
+  {part:5,q:"The takeover bid was abandoned _____ the target company\'s share price rose sharply overnight.",correct:"because",d:["despite","so that","furthermore"],exp:'At B2, "because" remains correct but the distractor "despite" tests whether students confuse cause with contrast.'},
+  {part:5,q:"The sustainability report was commended by industry analysts; _____, critics questioned the methodology.",correct:"however",d:["consequently","furthermore","since"],exp:'"However" signals a shift from praise to criticism — a common rhetorical move in formal written English.'},
+  {part:5,q:"The new pricing model will be introduced gradually _____ minimise disruption to existing clients.",correct:"in order to",d:["so that","despite","whereas"],exp:'"In order to" + base verb expresses deliberate purpose — particularly formal and appropriate in business communication.'},
+  {part:5,q:"Profit margins remained stable _____ a significant increase in raw material costs.",correct:"in spite of",d:["because of","therefore","while"],exp:'"In spite of" + noun phrase demonstrates resilience against adversity — a precise B2 contrast structure.'},
+  {part:5,q:"The pilot study indicated strong user engagement; _____, the development team has been given the green light to proceed.",correct:"consequently",d:["however","whereas","despite"],exp:'"Consequently" links cause and effect formally — the green light is a direct outcome of the engagement data.'},
+  {part:5,q:"The negotiations stalled _____ both parties refused to make concessions on the key contractual clauses.",correct:"because",d:["despite","whereas","in addition"],exp:'At B2, students must recognise "because" as the correct causal link even when sophisticated distractors like "despite" are present.'},
+  {part:5,q:"The new branch will serve customers in the northern region _____ reducing the workload at the central office.",correct:"while",d:["despite","so that","however"],exp:'"While" here expresses simultaneity and added benefit — a dual-purpose connector used in formal descriptions.'},
+  {part:5,q:"The board recognised the risks; _____, they approved the expansion unanimously.",correct:"nevertheless",d:["therefore","since","additionally"],exp:'"Nevertheless" signals that awareness of risk did not prevent approval — a strong adversative connector.'},
+  {part:5,q:"The initiative failed to gain traction _____ its poor alignment with the company\'s core values.",correct:"due to",d:["although","so that","whereas"],exp:'"Due to" + noun phrase attributes a formal cause — here the noun phrase is complex, testing B2 reading comprehension.'},
+  {part:5,q:"The marketing campaign was praised for its creativity _____ it failed to convert into measurable sales growth.",correct:"even though",d:["due to","furthermore","consequently"],exp:'"Even though" introduces a strong concession — creativity was real but commercially ineffective.'},
+
+  // ── PART 6 (Q31–40) ─────────────────────────────────────────────────────
+  {part:6,context:"[Internal Memo — Chief Operations Officer to Department Heads]\n\nFollowing the conclusion of our annual strategic review, several operational changes will take effect from 1 June.",q:"_____ (Q31), the procurement process will be centralised under a newly formed Supply Chain division.",correct:"Furthermore",d:["However","Despite","Whereas"],exp:'"Furthermore" introduces an additional measure following the announcement of operational changes — a formal addition connector.'},
+  {part:6,context:"[Internal Memo — Chief Operations Officer to Department Heads]\n\nAll departments will be required to submit monthly performance reports to the newly formed Supply Chain division.",q:"These reports must be submitted by the fifth working day of each month _____ (Q32) delays are unavoidable.",correct:"unless",d:["although","due to","consequently"],exp:'"Unless" introduces the only exception to the rule — a formal conditional connector critical at B2.'},
+  {part:6,context:"[Investor Relations Report — Q2 Earnings Update]\n\nNet revenues increased by 14% year-on-year, driven primarily by strong performance in the digital services segment.",q:"_____ (Q33), operating costs rose by 9%, partially offsetting the revenue gains.",correct:"However",d:["Therefore","Furthermore","Since"],exp:'"However" pivots from the positive revenue figure to the contrasting cost increase — essential for balanced financial reporting.'},
+  {part:6,context:"[Investor Relations Report — Q2 Earnings Update]\n\nOperating costs rose by 9%, partially offsetting the revenue gains.",q:"The increase in costs was primarily _____ (Q34) a 17% rise in logistics expenditure following the expansion into new markets.",correct:"due to",d:["so that","whereas","although"],exp:'"Due to" + noun phrase formally attributes a financial cause — standard in investor communications at B2.'},
+  {part:6,context:"[Press Release — Corporate Sustainability Initiative]\n\nThe company has committed to reducing its carbon footprint by 40% over the next decade.",q:"_____ (Q35), it will invest €50 million in renewable energy infrastructure over the next three years.",correct:"Additionally",d:["However","Despite","Whereas"],exp:'"Additionally" introduces a concrete financial commitment that supplements the carbon reduction pledge.'},
+  {part:6,context:"[Press Release — Corporate Sustainability Initiative]\n\nThe new sustainability targets are ambitious but achievable.",q:"The company will pursue these targets _____ (Q36) ensuring that operational efficiency is not compromised.",correct:"while",d:["despite","so that","because of"],exp:'"While" here expresses simultaneous action — pursuing targets without sacrificing efficiency. A sophisticated B2 structure.'},
+  {part:6,context:"[Client Communication — Legal Services Firm]\n\nWe write to inform you that the arbitration proceedings in the above matter have been concluded.",q:"_____ (Q37), the ruling was not entirely in your favour, we are confident that the outcome can be appealed successfully.",correct:"Although",d:["Furthermore","In order to","Consequently"],exp:'"Although" opens with a frank concession before pivoting to a reassuring note — a formal and empathetic B2 register.'},
+  {part:6,context:"[Client Communication — Legal Services Firm]\n\nThe arbitration panel ruled in favour of the opposing party on two of the three disputed clauses.",q:"This outcome arose _____ (Q38) the ambiguity in the original contractual language, which we had flagged at the drafting stage.",correct:"because of",d:["so that","although","nevertheless"],exp:'"Because of" + noun phrase formally attributes cause — the noun phrase here is complex, testing B2 reading precision.'},
+  {part:6,context:"[Board Meeting Minutes — Strategy Committee]\n\nThe committee reviewed three proposals for the redevelopment of the East Campus site.",q:"_____ (Q39), it was agreed that a feasibility study should be commissioned before any final decision is taken.",correct:"Consequently",d:["However","Despite","Whereas"],exp:'"Consequently" signals that the decision to commission a study is a direct outcome of reviewing the proposals.'},
+  {part:6,context:"[Board Meeting Minutes — Strategy Committee]\n\nA feasibility study will be commissioned before any final decision is taken on the East Campus redevelopment.",q:"The study will evaluate financial viability _____ (Q40) assess the potential impact on local communities.",correct:"as well as",d:["despite","whereas","since"],exp:'"As well as" elegantly combines two parallel infinitive phrases — a hallmark of formal written English at B2.'},
+
+  // ── PART 5 continued (Q41–50) ───────────────────────────────────────────
+  {part:5,q:"The proposed merger has attracted considerable media attention; _____, analysts remain divided on its likely outcome.",correct:"nevertheless",d:["therefore","since","additionally"],exp:'"Nevertheless" concedes the attention while signalling ongoing uncertainty — a nuanced adversative connector.'},
+  {part:5,q:"The company launched its digital platform _____ streamline customer onboarding and reduce administrative overhead.",correct:"in order to",d:["so that","despite","whereas"],exp:'"In order to" + base verb expresses formal purpose — the most appropriate register for corporate communications at B2.'},
+  {part:5,q:"_____ her extensive background in international finance, she found the regulatory environment in the new market unexpectedly complex.",correct:"Despite",d:["Although","Because","Since"],exp:'"Despite" + noun phrase — the noun phrase here is elaborate, requiring careful parsing at B2.'},
+  {part:5,q:"The interim results were broadly positive; _____, the full-year forecast has been revised upward.",correct:"as a result",d:["however","in spite of","whereas"],exp:'"As a result" draws a formal causal link between the positive interim results and the upgraded forecast.'},
+  {part:5,q:"The organisation is committed to diversity _____ inclusion at every level of its operations.",correct:"as well as",d:["instead of","despite","whereas"],exp:'"As well as" links two abstract nouns elegantly — a B2 collocation common in corporate policy language.'},
+  {part:5,q:"The tender was awarded to a rival firm _____ the company\'s bid was considered technically superior.",correct:"even though",d:["because","therefore","while"],exp:'"Even though" introduces a strong and surprising concession — technical superiority did not guarantee success.'},
+  {part:5,q:"The annual report confirms sustained growth across all divisions; _____, the audit committee has flagged concerns over liquidity.",correct:"however",d:["indeed","despite","whereas"],exp:'"However" pivots from a positive overall picture to a specific financial concern — precise and formal.'},
+  {part:5,q:"The legal counsel recommended settling out of court _____ avoid a protracted and costly litigation process.",correct:"so as to",d:["so that","because","although"],exp:'"So as to" + base verb is the most formal register for expressing purpose — preferred in legal and financial writing at B2.'},
+  {part:5,q:"Demand for the product remained robust _____ a significant price increase was introduced in Q3.",correct:"even though",d:["due to","consequently","whereas"],exp:'"Even though" shows that demand persisted despite the price rise — a strong concession typical of B2 business analysis.'},
+  {part:5,q:"The committee recognised the financial constraints; _____, it approved the full funding request.",correct:"nevertheless",d:["therefore","since","furthermore"],exp:'"Nevertheless" is the strongest adversative connector here — the approval is surprising given the acknowledged constraints.'},
+];
+
+const pos=[2,0,3,1,2,3,0,1,3,2,0,3,1,2,0,3,1,0,2,3,1,0,3,2,1,3,0,2,1,3,1,3,0,2,1,0,2,3,1,2,0,3,1,2,0,3,1,2,0,1];
+const questions=raw.map((q,i)=>{const p=pos[i];const opts=[...q.d];opts.splice(p,0,q.correct);return{...q,opts,ans:p};});
+
+let current=0,answers=new Array(50).fill(null),mode='practice';
+
+function setMode(m){mode=m;document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',(i===0&&m==='practice')||(i===1&&m==='test')));renderQ();}
+
+function renderQ(){
+  const q=questions[current];
+  document.getElementById('q-counter').textContent=(current+1)+' / 50';
+  document.getElementById('part-disp').textContent=q.part;
+  const ans=answers.filter(a=>a!==null).length;
+  const cor=answers.filter((a,i)=>a===questions[i].ans).length;
+  document.getElementById('score-disp').textContent=cor+' / '+ans;
+  document.getElementById('prog').style.width=((current+1)/50*100).toFixed(0)+'%';
+  document.getElementById('prev-btn').disabled=current===0;
+  document.getElementById('next-btn').style.display=current<49?'inline-block':'none';
+  document.getElementById('submit-btn').style.display=current===49?'inline-block':'none';
+  const ctx=q.context?`<div class="part6-context">${q.context}</div>`:'';
+  const opts=q.opts.map((o,i)=>{
+    let c='opt';
+    if(answers[current]!==null){if(i===q.ans)c+=' correct';else if(i===answers[current])c+=' wrong';}
+    return`<button class="${c}" onclick="choose(${i})" ${answers[current]!==null?'disabled':''}>${String.fromCharCode(65+i)}.&nbsp;${o}</button>`;
+  }).join('');
+  let fc='feedback',fh='';
+  if(answers[current]!==null&&mode==='practice'){
+    const ok=answers[current]===q.ans;
+    fc+=ok?' show correct-fb':' show wrong-fb';
+    fh=ok?'✓ Correct — '+q.exp:'✗ The correct answer is <strong>'+String.fromCharCode(65+q.ans)+'. '+q.opts[q.ans]+'</strong>. '+q.exp;
+  }
+  document.getElementById('quiz-area').innerHTML=`<div class="question-card"><div class="q-meta">Question ${current+1} &nbsp;·&nbsp; Part ${q.part}</div>${ctx}<div class="q-text">${q.q}</div><div class="options">${opts}</div><div class="${fc}">${fh}</div></div>`;
+}
+
+function choose(i){if(answers[current]!==null)return;answers[current]=i;renderQ();}
+function nextQ(){if(current<49){current++;renderQ();}}
+function prevQ(){if(current>0){current--;renderQ();}}
+
+function submitQuiz(){
+  const cor=answers.filter((a,i)=>a!==null&&a===questions[i].ans).length;
+  const ans=answers.filter(a=>a!==null).length;
+  const p5c=answers.filter((a,i)=>questions[i].part===5&&a===questions[i].ans).length;
+  const p5t=questions.filter(q=>q.part===5).length;
+  const p6c=answers.filter((a,i)=>questions[i].part===6&&a===questions[i].ans).length;
+  const p6t=questions.filter(q=>q.part===6).length;
+  const pct=Math.round(cor/50*100);
+  const msg=pct>=80?'Outstanding — C1 territory!':pct>=60?'Strong B2 performance — keep refining!':'Review those connectors and try again!';
+  document.getElementById('quiz-area').style.display='none';
+  document.getElementById('nav-bar').style.display='none';
+  const ra=document.getElementById('results-area');
+  ra.style.display='block';
+  ra.innerHTML=`<div class="results"><div class="score-ring"><span class="num">${cor}/50</span><span class="lbl">score</span></div><h2>${msg}</h2><p>${pct}% correct &nbsp;·&nbsp; ${ans} questions answered</p><div class="breakdown"><div class="bd-card"><div class="val">${pct}%</div><div class="key">Overall</div></div><div class="bd-card"><div class="val">${p5c}/${p5t}</div><div class="key">Part 5</div></div><div class="bd-card"><div class="val">${p6c}/${p6t}</div><div class="key">Part 6</div></div><div class="bd-card"><div class="val">${50-ans}</div><div class="key">Unanswered</div></div></div><button class="btn primary" onclick="restartQuiz()">Try again</button></div>`;
+}
+
+function restartQuiz(){answers=new Array(50).fill(null);current=0;document.getElementById('quiz-area').style.display='block';document.getElementById('nav-bar').style.display='flex';document.getElementById('results-area').style.display='none';renderQ();}
+
+renderQ();
+</script>
+</body>
+</html>
