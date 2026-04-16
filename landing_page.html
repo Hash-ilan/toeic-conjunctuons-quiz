@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOEIC Conjunctions Quizzes</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f5f3ee;--surface:#ffffff;--border:#e0dbd0;--text:#1a1814;--muted:#7a756a;--b1:#2a6b4f;--b1-light:#e6f2ec;--b1-dark:#1a4a35;--b2:#1e4d8c;--b2-light:#e8eef8;--b2-dark:#122f57}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1rem}
+.container{max-width:600px;width:100%}
+header{text-align:center;margin-bottom:2.5rem}
+header h1{font-family:'DM Serif Display',serif;font-size:30px;font-weight:400;line-height:1.2;margin-bottom:8px}
+header p{font-size:15px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:480px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem 1.5rem;text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:12px}
+.card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+.badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.06em;padding:4px 12px;border-radius:20px;width:fit-content}
+.b1 .badge{background:var(--b1);color:#fff}
+.b2 .badge{background:var(--b2);color:#fff}
+.card h2{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;line-height:1.3}
+.card p{font-size:13px;color:var(--muted);line-height:1.6}
+.card-footer{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:13px;font-weight:500}
+.b1 .card-footer{color:var(--b1)}
+.b2 .card-footer{color:var(--b2)}
+footer{margin-top:2.5rem;font-size:12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>TOEIC Parts 5 &amp; 6<br>Conjunctions Quizzes</h1>
+    <p>Select your level to begin</p>
+  </header>
+
+  <div class="cards">
+    <a class="card b1" href="index.html">
+      <span class="badge">B1 — Intermediate</span>
+      <h2>Conjunctions Quiz</h2>
+      <p>Contrast, addition, cause, result and purpose connectors in professional contexts.</p>
+      <div class="card-footer">50 questions →</div>
+    </a>
+    <a class="card b2" href="toeic_conjunctions_quiz_B2.html">
+      <span class="badge">B2 — Upper Intermediate</span>
+      <h2>Conjunctions Quiz</h2>
+      <p>Advanced connectors in complex corporate texts — reports, legal letters, board minutes.</p>
+      <div class="card-footer">50 questions →</div>
+    </a>
+  </div>
+</div>
+<footer>TOEIC exam preparation &nbsp;·&nbsp; Parts 5 &amp; 6</footer>
+</body>
+</html>
